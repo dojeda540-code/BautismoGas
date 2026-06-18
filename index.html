@@ -51,6 +51,31 @@
             z-index: -1;
         }
 
+        /* NUEVO: Bloque Parallax Intermedio (Mismo alto que el mapa) */
+        .parallax-section-inline {
+            position: relative;
+            height: 220px; /* Misma altura que el mapa */
+            margin: 35px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            z-index: -1;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .parallax-bg-2 {
+            position: absolute;
+            top: -50px; left: 0; right: 0; bottom: -50px;
+            background-image: url('back_gas_2.jpeg'); /* Nombre de tu segunda imagen en GitHub */
+            background-position: center;
+            background-size: cover;
+            transform: translateZ(-1px) scale(2);
+            z-index: -1;
+        }
+
         /* Tarjeta de portada */
         .card-portada {
             background-color: rgba(255, 255, 255, 0.92);
@@ -156,11 +181,11 @@
         <!-- CONTENIDO FIJO -->
         <div class="seccion-info">
             <p class="destacado">¡Acompáñanos a celebrar!</p>
-            <p>Mis papás
- Cielo Mostajo & Gustavo Ojeda
-Mis padrinos
-Silvia Ojeda & Gerónimo Coronel 
-Te invitan a compartir mi ceremonia de Bautismo</p>
+            <p>Mis papás<br>
+            Cielo Mostajo & Gustavo Ojeda<br>
+            Mis padrinos<br>
+            Silvia Ojeda & Gerónimo Coronel<br>
+            Te invitan a compartir mi ceremonia de Bautismo</p>
             
             <div class="divisor"></div>
 
@@ -176,6 +201,15 @@ Te invitan a compartir mi ceremonia de Bautismo</p>
                     loading="lazy">
                 </iframe>
             </div>
+
+            <!-- NUEVO: BLOQUE PARALLAX INTERMEDIO -->
+            <div class="parallax-section-inline">
+                <div class="parallax-bg-2"></div>
+            </div>
+
+            <!-- NUEVA SECCIÓN: CELEBRACIÓN -->
+            <h2>Celebración</h2>
+            <p>Nos encontramos luego en <strong>Bar la RURAL del Parque</strong>, Av. Carlos Thays 700, para compartir un momento juntos.</p>
 
             <div class="divisor"></div>
 
