@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mi Bautismo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* Reset para móviles */
+        * { box-sizing: border-box; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            color: #555;
+            background-color: #fcfbfa;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* Contenedor Scroll con Parallax optimizado para celular */
+        .wrapper {
+            height: 100vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+            perspective: 2px; /* Crea el espacio 3D para el parallax móvil */
+        }
+
+        .parallax-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform-style: preserve-3d;
+            z-index: -1;
+        }
+
+        /* Fondo con profundidad */
+        .parallax-bg {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: url('https://images.unsplash.com/photo-1544033527-b192daee1f5b?q=80&w=600');
+            background-position: center;
+            background-size: cover;
+            /* Multiplicador de velocidad de scroll */
+            transform: translateZ(-2px) scale(2); 
+            z-index: -1;
+        }
+
+        /* Tarjeta de portada */
+        .card-portada {
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 35px 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            width: 85%;
+            text-align: center;
+        }
+
+        .card-portada h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.2rem;
+            color: #bfa38a;
+            margin: 0 0 10px 0;
+        }
+
+        .card-portada p {
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0;
+            color: #777;
+        }
+
+        /* Contenido fijo abajo */
+        .seccion-info {
+            position: relative;
+            background: #fcfbfa;
+            padding: 50px 25px;
+            text-align: center;
+            z-index: 1; /* Pasa por encima del fondo */
+            box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+        }
+
+        .seccion-info h2 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8rem;
+            color: #bfa38a;
+            margin: 15px 0;
+        }
+
+        .seccion-info p {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin: 10px 0;
+        }
+
+        .destacado {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #4a4a4a;
+        }
+
+        /* Mapa táctil responsivo */
+        .map-container {
+            margin: 25px 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            height: 220px; /* Altura fija cómoda para celular */
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .btn-confirmar {
+            display: block;
+            margin-top: 25px;
+            padding: 15px;
+            background-color: #bfa38a;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px; /* Más cuadrado/moderno para touch */
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 10px rgba(191, 163, 138, 0.3);
+        }
+
+        .divisor {
+            width: 40px;
+            height: 1px;
+            background-color: #bfa38a;
+            margin: 25px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <!-- PORTADA PARALLAX (MÓVIL FRIENDLY) -->
+        <div class="parallax-section">
+            <div class="parallax-bg"></div>
+            <div class="card-portada">
+                <h1>Mi Bautismo</h1>
+                <p>Mateo Alejandro</p>
+            </div>
+        </div>
+
+        <!-- CONTENIDO FIJO -->
+        <div class="seccion-info">
+            <p class="destacado">¡Acompáñanos a celebrar!</p>
+            <p>Hay momentos en la vida que son irrepetibles, pero compartirlos con los que más queremos los hace inolvidables.</p>
+            
+            <div class="divisor"></div>
+
+            <h2>Ceremonia</h2>
+            <p class="destacado">Sábado, 5 de Septiembre</p>
+            <p>Horario: 11:00 hs</p>
+            <p>Parroquia de la Merced</p>
+
+            <!-- MAPA -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1079379664537!2d-65.2052445!3d-26.836544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c3f3faee1f9%3A0x884bf60676450!2sBas%C3%ADlica%20de%20Nuestra%20Se%C3%B1ora%20de%20la%20Merced!5e0!3m2!1ses-419!2sar!4v1700000000000" 
+                    loading="lazy">
+                </iframe>
+            </div>
+
+            <div class="divisor"></div>
+
+            <h2>Confirmación</h2>
+            <p>Por favor, confirma tu asistencia antes del 20 de Agosto.</p>
+            <a href="https://wa.me/5493810000000?text=Hola!%20Confirmo%20mi%20asistencia%20al%20bautismo" class="btn-confirmar" target="_blank">Confirmar por WhatsApp</a>
+        </div>
+    </div>
+
+</body>
+</html>
