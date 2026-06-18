@@ -51,29 +51,42 @@
             z-index: -1;
         }
 
-        /* NUEVO: Bloque Parallax Intermedio (Mismo alto que el mapa) */
+        /* NUEVO: Contenedor para Parallax Intermedio a Ancho Completo */
+        .wrapper_inline {
+            /* Estilos para el efecto de paralaje */
+            perspective: 1px;
+            height: 220px; /* Misma altura que el mapa */
+            overflow-x: hidden;
+            overflow-y: auto;
+            /* Estilos para ancho completo */
+            width: 100vw; 
+            position: relative;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 35px;
+            margin-bottom: 35px;
+            border-radius: 0; /* Sin bordes redondeados para el "corte" */
+            box-shadow: none; /* Sin sombra para el "corte" */
+        }
+
         .parallax-section-inline {
             position: relative;
-            height: 220px; /* Misma altura que el mapa */
-            margin: 35px 0;
+            height: 100%; 
             display: flex;
             align-items: center;
             justify-content: center;
             transform-style: preserve-3d;
-            z-index: -1;
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
         .parallax-bg-2 {
             position: absolute;
-            top: -50px; left: 0; right: 0; bottom: -50px;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image: url('back_gas_2.jpeg'); /* Nombre de tu segunda imagen en GitHub */
             background-position: center;
             background-size: cover;
-            transform: translateZ(-1px) scale(2);
-            z-index: -1;
+            /* Efecto paralaje optimizado para móvil */
+            background-attachment: scroll; 
+            transform: translateZ(0); /* Aceleración por hardware */
         }
 
         /* Tarjeta de portada */
@@ -111,17 +124,25 @@
             box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
         }
 
+        /* Ajuste para las secciones dentro de seccion-info */
+        .seccion-info h2, .seccion-info p, .seccion-info .divisor, .seccion-info .map-container, .seccion-info .btn-confirmar {
+            width: 100%;
+            max-width: 600px; /* Opcional: limita el ancho del contenido para mejor lectura */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .seccion-info h2 {
             font-family: 'Great Vibes', cursive;
             font-size: 2.8rem;
             color: #bfa38a;
-            margin: 15px 0;
+            margin: 15px auto;
         }
 
         .seccion-info p {
             font-size: 1rem;
             line-height: 1.7;
-            margin: 10px 0;
+            margin: 10px auto;
         }
 
         .destacado {
@@ -132,7 +153,7 @@
 
         /* Mapa táctil responsivo */
         .map-container {
-            margin: 25px 0;
+            margin: 25px auto;
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
@@ -169,7 +190,6 @@
 <body>
 
     <div class="wrapper">
-        <!-- PORTADA PARALLAX (MÓVIL FRIENDLY) -->
         <div class="parallax-section">
             <div class="parallax-bg"></div>
             <div class="card-portada">
@@ -178,7 +198,6 @@
             </div>
         </div>
 
-        <!-- CONTENIDO FIJO -->
         <div class="seccion-info">
             <p class="destacado">¡Acompáñanos a celebrar!</p>
             <p>Mis papás<br>
@@ -187,37 +206,4 @@
             Silvia Ojeda & Gerónimo Coronel<br>
             Te invitan a compartir mi ceremonia de Bautismo</p>
             
-            <div class="divisor"></div>
-
-            <h2>Ceremonia</h2>
-            <p class="destacado">Domingo 12 de julio</p>
-            <p>Horario: 11:00 hs</p>
-            <p>Parroquia Nuestra Señora de la Medalla Milagrosa</p>
-
-            <!-- MAPA -->
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.118551813552!2d-65.18749502477841!3d-26.836181376692885!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0603265f41%3A0x90644f57cfb92c06!2sParroquia%20Nuestra%20Se%C3%B1ora%20de%20la%20Medalla%20Milagrosa!5e0!3m2!1ses!2sar!4v1781789790631!5m2!1ses!2sar" 
-                    loading="lazy">
-                </iframe>
-            </div>
-
-            <!-- NUEVO: BLOQUE PARALLAX INTERMEDIO -->
-            <div class="parallax-section-inline">
-                <div class="parallax-bg-2"></div>
-            </div>
-
-            <!-- NUEVA SECCIÓN: CELEBRACIÓN -->
-            <h2>Celebración</h2>
-            <p>Nos encontramos luego en <strong>Bar la RURAL del Parque</strong>, Av. Carlos Thays 700, para compartir un momento juntos.</p>
-
-            <div class="divisor"></div>
-
-            <h2>Confirmación</h2>
-            <p>Por favor, confirma tu asistencia hasta el 4 de julio.</p>
-            <a href="https://wa.me/5493814655214?text=Hola!%20Confirmo%20mi%20asistencia%20al%20bautismo" class="btn-confirmar" target="_blank">Confirmar por WhatsApp</a>
-        </div>
-    </div>
-
-</body>
-</html>
+            <div class="divisor
